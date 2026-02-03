@@ -1,245 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junaid Ahmed | Aspiring Computer Scientist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junaid Ahmed | Aspiring Computer Scientist</title>
 
-    <meta name="description" content="Junaid Ahmed – Aspiring Computer Scientist from Bangladesh. Self-taught developer, CS50 graduate, and community-driven learner.">
-    <meta name="author" content="Junaid Ahmed">
+  <meta name="description" content="Junaid Ahmed – Aspiring Computer Scientist from Bangladesh. Self-taught developer, CS50 graduate, community-driven learner.">
 
-    <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #334155;
-            --accent: #2563eb;
-            --bg: #f8fafc;
-            --card: #ffffff;
-        }
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #2563eb;
+      --radius: 14px;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-            background-color: var(--bg);
-            color: var(--secondary);
-            line-height: 1.7;
-        }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--surface);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    }
 
-        header {
-            margin-bottom: 60px;
-        }
+    .hero img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 50%;
+      border: 5px solid #e2e8f0;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
+    .hero h1 {
+      font-size: 2.6rem;
+      color: #020617;
+    }
 
-        header h2 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-top: 10px;
-        }
+    .hero h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin: 10px 0 20px;
+    }
 
-        .buttons {
-            margin-top: 20px;
-        }
+    .buttons a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+    }
 
-        .buttons a {
-            display: inline-block;
-            margin-right: 15px;
-            padding: 10px 18px;
-            border-radius: 6px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            font-weight: 500;
-        }
+    .buttons a.primary {
+      background: var(--accent);
+      color: white;
+    }
 
-        .buttons a.primary {
-            background-color: var(--accent);
-            color: white;
-        }
+    /* SECTIONS */
+    section {
+      margin-top: 60px;
+    }
 
-        section {
-            margin-bottom: 60px;
-        }
+    section h3 {
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 20px;
+    }
 
-        section h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
+    .card {
+      background: var(--surface);
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
 
-        .card {
-            background-color: var(--card);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
+    ul {
+      margin-left: 20px;
+    }
 
-        ul {
-            margin-left: 20px;
-        }
+    ul li {
+      margin-bottom: 10px;
+    }
 
-        ul li {
-            margin-bottom: 8px;
-        }
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 80px;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+      .hero img {
+        margin: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <header>
-        <h1>Junaid Ahmed</h1>
-        <h2>Aspiring Computer Scientist • Self-Taught Developer • Community-Driven Learner</h2>
+  <!-- HERO -->
+  <div class="hero">
+    <img src="https://scontent.fdac136-1.fna.fbcdn.net/v/t39.30808-6/588547735_829656619770545_7251363058123234037_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGYjAwmLPGPk33R43isoT6v-RTSNPXoqm75FNI09eiqbhGmS5y7z_Ok08MC0ee9wbakOOfCFLE612jMRolEzm_E&_nc_ohc=3TPV5661Nl8Q7kNvwFjME_A&_nc_oc=AdkJ5EVuGsCFOSl_qsqxXOsNGIALUTn6B7NJKImIYCMJhEsvbYRnePVI4IyEqVZQDak&_nc_zt=23&_nc_ht=scontent.fdac136-1.fna&_nc_gid=nysqBej0ikpv3nYoGFn_UA&oh=00_AfuPM7nmuFY-pP3Nm6GbCyc6Vyl24EwfLYRdlO-PokMkPQ&oe=69877498" alt="Junaid Ahmed">
+    <div>
+      <h1>Junaid Ahmed</h1>
+      <h2>Aspiring Computer Scientist • Self-Taught Developer • Community-Driven Learner</h2>
+      <p>
+        Prospective undergraduate student in Computer Science from Sylhet, Bangladesh, combining
+        academic excellence with self-directed technical learning and leadership experience.
+      </p>
+      <div class="buttons" style="margin-top:20px;">
+        <a href="#" class="primary">Download CV</a>
+        <a href="mailto:hi.junaidofficial@gmail.com">Contact</a>
+      </div>
+    </div>
+  </div>
 
-        <div class="buttons">
-            <a href="#" class="primary">Download CV</a>
-            <a href="mailto:hi.junaidofficial@gmail.com">Contact Me</a>
-        </div>
-    </header>
+  <!-- ABOUT -->
+  <section>
+    <h3>About Me</h3>
+    <div class="card">
+      <p>
+        I come from a rural area of Sylhet, Bangladesh, where access to advanced technical resources
+        was limited. Despite this, I pursued academic excellence and completed both my SSC and HSC
+        in the science stream with a GPA of 5.00 out of 5.00.
+      </p><br>
+      <p>
+        My interest in computer science grew through hands-on exploration and independent study.
+        I strengthened my foundation through internationally recognized courses such as CS50x and
+        CS50P by Harvard University, which confirmed my commitment to this field.
+      </p>
+    </div>
+  </section>
 
-    <section>
-        <h3>About Me</h3>
-        <div class="card">
-            <p>
-                I am a prospective undergraduate student in Computer Science from Sylhet, Bangladesh, with a strong academic
-                background in science and a deep interest in software development and applied computing. Growing up in a rural
-                area with limited access to advanced technical resources, I pursued academic excellence and self-directed
-                learning with discipline and consistency.
-            </p>
-            <br>
-            <p>
-                I completed my SSC and HSC in the science stream with a GPA of 5.00 out of 5.00. Alongside formal education,
-                I strengthened my programming foundation through internationally recognized courses such as CS50x and CS50P
-                by Harvard University. These experiences confirmed my commitment to computer science as a field of study.
-            </p>
-            <br>
-            <p>
-                I believe technology should serve society. My long-term interest lies in using software and automation to
-                improve public services and reduce inefficiencies in developing systems.
-            </p>
-        </div>
-    </section>
+  <!-- ACADEMICS -->
+  <section>
+    <h3>Academic Background</h3>
+    <div class="card">
+      <p><strong>Higher Secondary Certificate (Science)</strong><br>
+      Gobindaganj Abdul Haque Smrity College — GPA 5.00 / 5.00</p><br>
 
-    <section>
-        <h3>Academic Background</h3>
-        <div class="card">
-            <p><strong>Higher Secondary Certificate (Science)</strong><br>
-                Gobindaganj Abdul Haque Smrity College<br>
-                GPA: <strong>5.00 / 5.00</strong>
-            </p>
-            <br>
-            <p><strong>Secondary School Certificate (Science)</strong><br>
-                Lakeshore Dakhil Madrasah<br>
-                GPA: <strong>5.00 / 5.00</strong>
-            </p>
-        </div>
-    </section>
+      <p><strong>Secondary School Certificate (Science)</strong><br>
+      Lakeshore Dakhil Madrasah — GPA 5.00 / 5.00</p>
+    </div>
+  </section>
 
-    <section>
-        <h3>Technical Skills</h3>
-        <div class="card">
-            <ul>
-                <li><strong>Programming:</strong> Python, Dart</li>
-                <li><strong>Backend Fundamentals:</strong> FastAPI, REST APIs</li>
-                <li><strong>Mobile Development:</strong> Flutter (cross-platform basics)</li>
-                <li><strong>Web Basics:</strong> HTML</li>
-                <li><strong>Tools:</strong> Microsoft Word, Excel, PowerPoint</li>
-                <li><strong>Core Strengths:</strong> Problem-solving, logical thinking, self-learning</li>
-            </ul>
-        </div>
-    </section>
+  <!-- SKILLS -->
+  <section>
+    <h3>Technical Skills</h3>
+    <div class="card">
+      <ul>
+        <li><strong>Programming:</strong> Python, Dart</li>
+        <li><strong>Backend:</strong> FastAPI, REST APIs</li>
+        <li><strong>Mobile:</strong> Flutter (cross-platform)</li>
+        <li><strong>Web:</strong> HTML</li>
+        <li><strong>Core Strengths:</strong> Problem-solving, logical thinking, self-learning</li>
+      </ul>
+    </div>
+  </section>
 
-    <section>
-        <h3>Certifications</h3>
-        <div class="card">
-            <ul>
-                <li>CS50x – Introduction to Computer Science (Harvard University, edX)</li>
-                <li>CS50P – Introduction to Programming with Python (Harvard University, edX)</li>
-                <li>HackerRank Certifications:
-                    <ul>
-                        <li>Problem Solving (Intermediate)</li>
-                        <li>REST API (Intermediate)</li>
-                        <li>Python (Basic), CSS (Basic)</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
+  <!-- LEADERSHIP -->
+  <section>
+    <h3>Leadership & Volunteering</h3>
+    <div class="card">
+      <p><strong>Community Project Leader – Village Street Lighting Initiative</strong></p>
+      <p>
+        Led a 40-member volunteer team to fund and install 150+ streetlights, improving safety,
+        mobility, and community participation.
+      </p>
+    </div>
+  </section>
 
-    <section>
-        <h3>Leadership & Volunteering</h3>
-        <div class="card">
-            <p><strong>Community Project Leader – Village Street Lighting Initiative</strong><br>
-                Nure Modina Welfare Organization
-            </p>
-            <br>
-            <p>
-                Led a 40-member volunteer team to raise community funds and coordinate the installation of more than
-                150 streetlights, improving night safety, mobility, and community participation.
-            </p>
-        </div>
-    </section>
+  <!-- GOALS -->
+  <section>
+    <h3>Future Goals</h3>
+    <div class="card">
+      <p>
+        My goal is to complete a Bachelor’s degree in Computer Science and later specialize in
+        Artificial Intelligence. I aim to contribute to software engineering and digital public
+        service systems that improve efficiency, transparency, and accessibility.
+      </p>
+    </div>
+  </section>
 
-    <section>
-        <h3>Future Goals</h3>
-        <div class="card">
-            <p>
-                My academic goal is to complete a Bachelor’s degree in Computer Science and later specialize in
-                Artificial Intelligence at the graduate level. Professionally, I aim to contribute to software
-                engineering and digital public service systems, particularly in developing efficient, accessible,
-                and transparent government technologies.
-            </p>
-        </div>
-    </section>
+  <!-- CONTACT -->
+  <section>
+    <h3>Contact</h3>
+    <div class="card">
+      <p><strong>Email:</strong> hi.junaidofficial@gmail.com</p>
+      <p><strong>Location:</strong> Sylhet, Bangladesh</p>
+    </div>
+  </section>
 
-    <section>
-        <h3>Contact</h3>
-        <div class="card">
-            <p><strong>Email:</strong> <a href="mailto:hi.junaidofficial@gmail.com">hi.junaidofficial@gmail.com</a></p>
-            <p><strong>Location:</strong> Sylhet, Bangladesh</p>
-        </div>
-    </section>
-
-    <footer>
-        © Junaid Ahmed — junaid.pro.bd<br>
-        Building skills today for responsible innovation tomorrow.
-    </footer>
+  <footer>
+    © Junaid Ahmed — junaid.pro.bd<br>
+    Building skills today for responsible innovation tomorrow.
+  </footer>
 
 </div>
 
