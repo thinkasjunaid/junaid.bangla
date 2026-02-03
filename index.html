@@ -3,229 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Personal Website</title>
+    <title>Junaid Ahmed | Aspiring Computer Scientist</title>
+
+    <meta name="description" content="Junaid Ahmed – Aspiring Computer Scientist from Bangladesh. Self-taught developer, CS50 graduate, and community-driven learner.">
+    <meta name="author" content="Junaid Ahmed">
+
     <style>
-        /* Reset and base styles */
+        :root {
+            --primary: #0f172a;
+            --secondary: #334155;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+            background-color: var(--bg);
+            color: var(--secondary);
+            line-height: 1.7;
         }
-        
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
         }
-        
-        /* Header */
+
         header {
-            text-align: center;
-            padding: 60px 20px 40px;
-            color: white;
+            margin-bottom: 60px;
         }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            margin-bottom: 20px;
-            object-fit: cover;
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
         }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .tagline {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-        
-        /* Main content */
-        main {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-            position: relative;
-        }
-        
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #667eea;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        
-        ul {
-            padding-left: 25px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .skill-tag {
-            background: #667eea;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 25px;
-            font-size: 0.9rem;
+
+        header h2 {
+            font-size: 1.2rem;
             font-weight: 500;
+            margin-top: 10px;
         }
-        
-        /* Contact */
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+
+        .buttons {
             margin-top: 20px;
         }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s;
+
+        .buttons a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-weight: 500;
         }
-        
-        .contact-item:hover {
-            color: #667eea;
+
+        .buttons a.primary {
+            background-color: var(--accent);
+            color: white;
         }
-        
-        .contact-item i {
-            font-size: 1.2rem;
+
+        section {
+            margin-bottom: 60px;
         }
-        
-        /* Footer */
+
+        section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .card {
+            background-color: var(--card);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
         footer {
             text-align: center;
-            padding: 30px 20px;
-            color: rgba(255, 255, 255, 0.8);
+            margin-top: 80px;
             font-size: 0.9rem;
+            color: #64748b;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.3rem;
-            }
-            
-            main {
-                padding: 25px;
-            }
-            
-            .profile-img {
-                width: 120px;
-                height: 120px;
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
             }
         }
     </style>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
-            <h1>John Doe</h1>
-            <p class="tagline">Full Stack Developer & UI/UX Designer</p>
-        </header>
-        
-        <main>
-            <section class="section">
-                <h2>About Me</h2>
-                <p>Passionate full-stack developer with 5+ years of experience building web applications that solve real-world problems. I love clean code, beautiful design, and creating products that make a difference.</p>
-                <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source, or sharing knowledge through technical blogging and mentoring.</p>
-            </section>
-            
-            <section class="section">
-                <h2>Skills</h2>
-                <div class="skills">
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Git</span>
-                </div>
-            </section>
-            
-            <section class="section">
-                <h2>Experience</h2>
-                <ul>
-                    <li><strong>Senior Developer</strong> - Tech Corp (2022-Present)</li>
-                    <li><strong>Full Stack Engineer</strong> - StartupXYZ (2020-2022)</li>
-                    <li><strong>Frontend Developer</strong> - Web Agency (2018-2020)</li>
-                </ul>
-            </section>
-            
-            <section class="section">
-                <h2>Contact</h2>
-                <div class="contact-info">
-                    <a href="mailto:john.doe@email.com" class="contact-item">
-                        <i class="fas fa-envelope"></i> john.doe@email.com
-                    </a>
-                    <a href="https://linkedin.com/in/johndoe" class="contact-item" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/johndoe" class="contact-item" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </section>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 John Doe. All rights reserved.</p>
-        </footer>
-    </div>
+
+<div class="container">
+
+    <header>
+        <h1>Junaid Ahmed</h1>
+        <h2>Aspiring Computer Scientist • Self-Taught Developer • Community-Driven Learner</h2>
+
+        <div class="buttons">
+            <a href="#" class="primary">Download CV</a>
+            <a href="mailto:hi.junaidofficial@gmail.com">Contact Me</a>
+        </div>
+    </header>
+
+    <section>
+        <h3>About Me</h3>
+        <div class="card">
+            <p>
+                I am a prospective undergraduate student in Computer Science from Sylhet, Bangladesh, with a strong academic
+                background in science and a deep interest in software development and applied computing. Growing up in a rural
+                area with limited access to advanced technical resources, I pursued academic excellence and self-directed
+                learning with discipline and consistency.
+            </p>
+            <br>
+            <p>
+                I completed my SSC and HSC in the science stream with a GPA of 5.00 out of 5.00. Alongside formal education,
+                I strengthened my programming foundation through internationally recognized courses such as CS50x and CS50P
+                by Harvard University. These experiences confirmed my commitment to computer science as a field of study.
+            </p>
+            <br>
+            <p>
+                I believe technology should serve society. My long-term interest lies in using software and automation to
+                improve public services and reduce inefficiencies in developing systems.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Academic Background</h3>
+        <div class="card">
+            <p><strong>Higher Secondary Certificate (Science)</strong><br>
+                Gobindaganj Abdul Haque Smrity College<br>
+                GPA: <strong>5.00 / 5.00</strong>
+            </p>
+            <br>
+            <p><strong>Secondary School Certificate (Science)</strong><br>
+                Lakeshore Dakhil Madrasah<br>
+                GPA: <strong>5.00 / 5.00</strong>
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Technical Skills</h3>
+        <div class="card">
+            <ul>
+                <li><strong>Programming:</strong> Python, Dart</li>
+                <li><strong>Backend Fundamentals:</strong> FastAPI, REST APIs</li>
+                <li><strong>Mobile Development:</strong> Flutter (cross-platform basics)</li>
+                <li><strong>Web Basics:</strong> HTML</li>
+                <li><strong>Tools:</strong> Microsoft Word, Excel, PowerPoint</li>
+                <li><strong>Core Strengths:</strong> Problem-solving, logical thinking, self-learning</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>Certifications</h3>
+        <div class="card">
+            <ul>
+                <li>CS50x – Introduction to Computer Science (Harvard University, edX)</li>
+                <li>CS50P – Introduction to Programming with Python (Harvard University, edX)</li>
+                <li>HackerRank Certifications:
+                    <ul>
+                        <li>Problem Solving (Intermediate)</li>
+                        <li>REST API (Intermediate)</li>
+                        <li>Python (Basic), CSS (Basic)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h3>Leadership & Volunteering</h3>
+        <div class="card">
+            <p><strong>Community Project Leader – Village Street Lighting Initiative</strong><br>
+                Nure Modina Welfare Organization
+            </p>
+            <br>
+            <p>
+                Led a 40-member volunteer team to raise community funds and coordinate the installation of more than
+                150 streetlights, improving night safety, mobility, and community participation.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Future Goals</h3>
+        <div class="card">
+            <p>
+                My academic goal is to complete a Bachelor’s degree in Computer Science and later specialize in
+                Artificial Intelligence at the graduate level. Professionally, I aim to contribute to software
+                engineering and digital public service systems, particularly in developing efficient, accessible,
+                and transparent government technologies.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h3>Contact</h3>
+        <div class="card">
+            <p><strong>Email:</strong> <a href="mailto:hi.junaidofficial@gmail.com">hi.junaidofficial@gmail.com</a></p>
+            <p><strong>Location:</strong> Sylhet, Bangladesh</p>
+        </div>
+    </section>
+
+    <footer>
+        © Junaid Ahmed — junaid.pro.bd<br>
+        Building skills today for responsible innovation tomorrow.
+    </footer>
+
+</div>
+
 </body>
 </html>
