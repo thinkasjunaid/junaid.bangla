@@ -1,240 +1,1320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Junaid Ahmed | Aspiring Computer Scientist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junaid Ahmed | Aspiring Computer Scientist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #0f172a;
+            --secondary-light: #1e293b;
+            --accent: #06b6d4;
+            --accent-light: #22d3ee;
+            --light: #f8fafc;
+            --light-gray: #f1f5f9;
+            --gray: #64748b;
+            --gray-dark: #475569;
+            --success: #10b981;
+            --success-light: #34d399;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 12px;
+            --section-spacing: 6rem;
+        }
 
-  <meta name="description" content="Junaid Ahmed – Aspiring Computer Scientist from Bangladesh. Self-taught developer, CS50 graduate, community-driven learner.">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    :root {
-      --bg: #0f172a;
-      --surface: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --accent: #2563eb;
-      --radius: 14px;
-    }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--secondary);
+            background-color: var(--light);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-      background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-      color: var(--text);
-      line-height: 1.7;
-    }
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.5px;
+            color: var(--secondary);
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+        h1 .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-      align-items: center;
-      background: var(--surface);
-      padding: 40px;
-      border-radius: var(--radius);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-    }
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+            color: var(--secondary);
+        }
 
-    .hero img {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 50%;
-      border: 5px solid #e2e8f0;
-    }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
 
-    .hero h1 {
-      font-size: 2.6rem;
-      color: #020617;
-    }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-    .hero h2 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin: 10px 0 20px;
-    }
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-dark);
+            font-weight: 400;
+        }
 
-    .buttons a {
-      display: inline-block;
-      margin-right: 12px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-    }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-    .buttons a.primary {
-      background: var(--accent);
-      color: white;
-    }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-    /* SECTIONS */
-    section {
-      margin-top: 60px;
-    }
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: var(--shadow);
+        }
 
-    section h3 {
-      font-size: 1.8rem;
-      color: white;
-      margin-bottom: 20px;
-    }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
 
-    .card {
-      background: var(--surface);
-      padding: 35px;
-      border-radius: var(--radius);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
 
-    ul {
-      margin-left: 20px;
-    }
+        .btn-secondary:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
 
-    ul li {
-      margin-bottom: 10px;
-    }
+        .section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+        }
 
-    footer {
-      text-align: center;
-      margin-top: 80px;
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
+        .section-dark {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+            color: white;
+        }
 
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+        .section-dark h2 {
+            color: white;
+        }
 
-      .hero img {
-        margin: auto;
-      }
-    }
-  </style>
+        .section-dark h2:after {
+            background: linear-gradient(90deg, var(--accent-light), var(--accent));
+        }
+
+        .section-dark p {
+            color: #e2e8f0;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 9rem;
+            padding-bottom: 6rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(37, 99, 235, 0.03) 0%, rgba(6, 182, 212, 0.03) 100%);
+            clip-path: polygon(100% 0, 100% 100%, 0 0);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+            background-color: rgba(37, 99, 235, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .section-dark .highlight {
+            color: var(--accent-light);
+            background-color: rgba(6, 182, 212, 0.15);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Social Media Icons - Hero Section */
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Profile Image */
+        .profile-img {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            max-width: 100%;
+            margin: 0 auto;
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .card-gpa {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--success), var(--success-light));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Education Section - Dark Background */
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .education-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .education-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-light), var(--accent));
+        }
+
+        .section-dark .education-card h3,
+        .section-dark .education-card p {
+            color: var(--secondary);
+        }
+
+        .section-dark .education-card .highlight {
+            color: var(--primary);
+        }
+
+        .edu-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+
+        .skill-level {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .skill-level[data-level="Advanced"] {
+            background-color: var(--success);
+        }
+
+        .skill-level[data-level="Intermediate"] {
+            background-color: var(--primary);
+        }
+
+        .skill-level[data-level="Basic"] {
+            background-color: var(--gray);
+        }
+
+        /* Certifications Section - Dark Background */
+        .certs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .cert-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .section-dark .cert-card h3,
+        .section-dark .cert-card p {
+            color: var(--secondary);
+        }
+
+        /* Leadership Section */
+        .leadership-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .leadership-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.8rem 1rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Goals Section - Dark Background */
+        .goals-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .goals-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section-dark .goals-content p {
+            color: #e2e8f0;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--light-gray);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+            color: var(--secondary);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--gray);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 4rem 0 2.5rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--accent-light);
+        }
+
+        .footer-text {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-container, .about-content, .contact-container {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-container, .about-content, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .hero-content {
+                order: 2;
+                text-align: center;
+            }
+            
+            .profile-img {
+                order: 1;
+                max-width: 400px;
+                margin: 0 auto;
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            
+            .hero-btns, .social-icons {
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section {
+                padding: 5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .education-container, .skills-container, .certs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .leadership-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-card, .education-card, .skill-category, .cert-card, .leadership-card, .contact-form {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-container {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding-top: 7rem;
+                padding-bottom: 4rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .leadership-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat {
+                padding: 1.5rem;
+            }
+            
+            .contact-item {
+                padding: 1.2rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .social-icons {
+                gap: 1rem;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                Junaid<span>.pro</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-<div class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content fade-in">
+                <h1><span class="gradient-text">Junaid Ahmed</span></h1>
+                <p class="subtitle">Aspiring Computer Scientist • Self-Taught Developer • Community-Driven Learner</p>
+                <p>I am a prospective undergraduate student in Computer Science from Sylhet, Bangladesh, with a strong academic background in science and a deep interest in software development and applied computing. I combine academic excellence with self-directed learning and community leadership to build a foundation for impactful technological contributions.</p>
+                
+                <div class="hero-btns">
+                    <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+                    <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
+                </div>
+                
+                <!-- Social Media Icons Added Here -->
+                <div class="social-icons">
+                    <a href="https://github.com/thinkasjunaid" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/8801309808792" target="_blank" class="social-icon" title="Whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/thinkasjunaid" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/thinkasjunaid" target="_blank" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://facebook.com/thinkasjunaid" target="_blank" class="social-icon" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/thinkasjunaid" target="_blank" class="social-icon" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="profile-img fade-in">
+                <img src="https://scontent.fdac136-1.fna.fbcdn.net/v/t39.30808-6/588547735_829656619770545_7251363058123234037_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGYjAwmLPGPk33R43isoT6v-RTSNPXoqm75FNI09eiqbhGmS5y7z_Ok08MC0ee9wbakOOfCFLE612jMRolEzm_E&_nc_ohc=3TPV5661Nl8Q7kNvwFjME_A&_nc_oc=AdkJ5EVuGsCFOSl_qsqxXOsNGIALUTn6B7NJKImIYCMJhEsvbYRnePVI4IyEqVZQDak&_nc_zt=23&_nc_ht=scontent.fdac136-1.fna&_nc_gid=nysqBej0ikpv3nYoGFn_UA&oh=00_AfuPM7nmuFY-pP3Nm6GbCyc6Vyl24EwfLYRdlO-PokMkPQ&oe=69877498" alt="Junaid Ahmed">
+            </div>
+        </div>
+    </section>
 
-  <!-- HERO -->
-  <div class="hero">
-    <img src="https://scontent.fdac136-1.fna.fbcdn.net/v/t39.30808-6/588547735_829656619770545_7251363058123234037_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGYjAwmLPGPk33R43isoT6v-RTSNPXoqm75FNI09eiqbhGmS5y7z_Ok08MC0ee9wbakOOfCFLE612jMRolEzm_E&_nc_ohc=3TPV5661Nl8Q7kNvwFjME_A&_nc_oc=AdkJ5EVuGsCFOSl_qsqxXOsNGIALUTn6B7NJKImIYCMJhEsvbYRnePVI4IyEqVZQDak&_nc_zt=23&_nc_ht=scontent.fdac136-1.fna&_nc_gid=nysqBej0ikpv3nYoGFn_UA&oh=00_AfuPM7nmuFY-pP3Nm6GbCyc6Vyl24EwfLYRdlO-PokMkPQ&oe=69877498" alt="Junaid Ahmed">
-    <div>
-      <h1>Junaid Ahmed</h1>
-      <h2>Aspiring Computer Scientist • Self-Taught Developer • Community-Driven Learner</h2>
-      <p>
-        Prospective undergraduate student in Computer Science from Sylhet, Bangladesh, combining
-        academic excellence with self-directed technical learning and leadership experience.
-      </p>
-      <div class="buttons" style="margin-top:20px;">
-        <a href="#" class="primary">Download CV</a>
-        <a href="mailto:hi.junaidofficial@gmail.com">Contact</a>
-      </div>
-    </div>
-  </div>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>I grew up in a rural area of Sylhet, Bangladesh, where access to advanced technical resources was limited. Despite these constraints, I pursued academic excellence and graduated with <span class="highlight">GPA 5.00/5.00</span> in both my Secondary School Certificate (SSC) and Higher Secondary Certificate (HSC) in the science stream.</p>
+                    <p>My interest in computer science developed through hands-on exploration and independent study. I have completed internationally recognized courses such as <span class="highlight">CS50x and CS50P by Harvard University</span>, which strengthened my foundation in programming, problem-solving, and computational thinking. These experiences confirmed my decision to pursue computer science as a formal academic discipline.</p>
+                    <p>Beyond academics, I am motivated by the idea that technology should serve society. I am particularly interested in how software and automation can improve public services and reduce inefficiencies in developing systems.</p>
+                </div>
+                <div class="about-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Perfect GPA in both SSC and HSC examinations despite limited resources in a rural setting.</p>
+                    <div class="card-gpa">GPA: 5.00 / 5.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ABOUT -->
-  <section>
-    <h3>About Me</h3>
-    <div class="card">
-      <p>
-        I come from a rural area of Sylhet, Bangladesh, where access to advanced technical resources
-        was limited. Despite this, I pursued academic excellence and completed both my SSC and HSC
-        in the science stream with a GPA of 5.00 out of 5.00.
-      </p><br>
-      <p>
-        My interest in computer science grew through hands-on exploration and independent study.
-        I strengthened my foundation through internationally recognized courses such as CS50x and
-        CS50P by Harvard University, which confirmed my commitment to this field.
-      </p>
-    </div>
-  </section>
+    <!-- Education Section -->
+    <section class="section section-dark" id="education">
+        <div class="container">
+            <h2>Academic Background</h2>
+            <div class="education-container">
+                <div class="education-card fade-in">
+                    <i class="fas fa-university edu-icon"></i>
+                    <h3>Higher Secondary Certificate (Science)</h3>
+                    <p class="highlight">Gobindaganj Abdul Haque Smrity College</p>
+                    <p>Completed with outstanding performance in the science stream with perfect GPA.</p>
+                    <div class="card-gpa">GPA: 5.00 / 5.00</div>
+                </div>
+                <div class="education-card fade-in">
+                    <i class="fas fa-school edu-icon"></i>
+                    <h3>Secondary School Certificate (Science)</h3>
+                    <p class="highlight">Lakeshore Dakhil Madrasah</p>
+                    <p>Established strong academic foundation with perfect GPA in science stream.</p>
+                    <div class="card-gpa">GPA: 5.00 / 5.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ACADEMICS -->
-  <section>
-    <h3>Academic Background</h3>
-    <div class="card">
-      <p><strong>Higher Secondary Certificate (Science)</strong><br>
-      Gobindaganj Abdul Haque Smrity College — GPA 5.00 / 5.00</p><br>
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3>Programming & Development</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Python</span> <span class="skill-level" data-level="Advanced">Advanced</span></li>
+                        <li><span class="skill-name">Dart</span> <span class="skill-level" data-level="Intermediate">Intermediate</span></li>
+                        <li><span class="skill-name">FastAPI</span> <span class="skill-level" data-level="Intermediate">Intermediate</span></li>
+                        <li><span class="skill-name">REST APIs</span> <span class="skill-level" data-level="Intermediate">Intermediate</span></li>
+                        <li><span class="skill-name">Flutter</span> <span class="skill-level" data-level="Basic">Basic</span></li>
+                        <li><span class="skill-name">HTML</span> <span class="skill-level" data-level="Intermediate">Intermediate</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>Tools & Core Strengths</h3>
+                    <ul class="skill-list">
+                        <li><span class="skill-name">Microsoft Office</span> <span class="skill-level" data-level="Advanced">Advanced</span></li>
+                        <li><span class="skill-name">Problem-solving</span> <span class="skill-level" data-level="Advanced">Advanced</span></li>
+                        <li><span class="skill-name">Logical Thinking</span> <span class="skill-level" data-level="Advanced">Advanced</span></li>
+                        <li><span class="skill-name">Self-Learning</span> <span class="skill-level" data-level="Advanced">Advanced</span></li>
+                        <li><span class="skill-name">Team Leadership</span> <span class="skill-level" data-level="Intermediate">Intermediate</span></li>
+                        <li><span class="skill-name">Communication</span> <span class="skill-level" data-level="Intermediate">Intermediate</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <p><strong>Secondary School Certificate (Science)</strong><br>
-      Lakeshore Dakhil Madrasah — GPA 5.00 / 5.00</p>
-    </div>
-  </section>
+    <!-- Certifications Section -->
+    <section class="section section-dark" id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certs-container">
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">Harvard University</div>
+                    <h3>CS50x – Introduction to Computer Science</h3>
+                    <p>Completed Harvard's flagship computer science course covering algorithms, data structures, and software development.</p>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">Harvard University</div>
+                    <h3>CS50P – Introduction to Programming with Python</h3>
+                    <p>Mastered Python programming fundamentals through Harvard's specialized course on edX.</p>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">HackerRank</div>
+                    <h3>Problem Solving (Intermediate)</h3>
+                    <p>Validated advanced problem-solving skills through algorithmic challenges and coding problems.</p>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-badge">HackerRank</div>
+                    <h3>REST API (Intermediate)</h3>
+                    <p>Demonstrated proficiency in designing and consuming RESTful APIs with proper authentication and endpoints.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- SKILLS -->
-  <section>
-    <h3>Technical Skills</h3>
-    <div class="card">
-      <ul>
-        <li><strong>Programming:</strong> Python, Dart</li>
-        <li><strong>Backend:</strong> FastAPI, REST APIs</li>
-        <li><strong>Mobile:</strong> Flutter (cross-platform)</li>
-        <li><strong>Web:</strong> HTML</li>
-        <li><strong>Core Strengths:</strong> Problem-solving, logical thinking, self-learning</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Leadership Section -->
+    <section class="section" id="leadership">
+        <div class="container">
+            <h2>Leadership & Volunteering</h2>
+            <div class="leadership-card fade-in">
+                <h3>Community Project Leader – Village Street Lighting Initiative</h3>
+                <p class="highlight">Nure Modina Welfare Organization</p>
+                <p>Led a 40-member volunteer team to raise community funds and coordinate the installation of 150+ streetlights, improving night safety, mobility, and community participation. This experience strengthened my leadership, communication, and organizational skills.</p>
+                
+                <div class="leadership-stats">
+                    <div class="stat">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">Volunteers Led</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Streetlights Installed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Community Funded</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- LEADERSHIP -->
-  <section>
-    <h3>Leadership & Volunteering</h3>
-    <div class="card">
-      <p><strong>Community Project Leader – Village Street Lighting Initiative</strong></p>
-      <p>
-        Led a 40-member volunteer team to fund and install 150+ streetlights, improving safety,
-        mobility, and community participation.
-      </p>
-    </div>
-  </section>
+    <!-- Future Goals Section -->
+    <section class="section section-dark" id="goals">
+        <div class="container">
+            <h2>Future Goals</h2>
+            <div class="goals-content fade-in">
+                <p>My academic goal is to complete a Bachelor's degree in Computer Science, followed by graduate specialization in Artificial Intelligence. Professionally, I aim to contribute to software engineering and digital public service systems, particularly in developing efficient, accessible, and transparent government technologies.</p>
+                <p>I am committed to using my education to create long-term social impact and to contribute responsibly to global and local technological development.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- GOALS -->
-  <section>
-    <h3>Future Goals</h3>
-    <div class="card">
-      <p>
-        My goal is to complete a Bachelor’s degree in Computer Science and later specialize in
-        Artificial Intelligence. I aim to contribute to software engineering and digital public
-        service systems that improve efficiency, transparency, and accessibility.
-      </p>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hi.junaidofficial@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Sylhet, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Website</h3>
+                            <p>junaid.pro.bd</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Send me a message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section>
-    <h3>Contact</h3>
-    <div class="card">
-      <p><strong>Email:</strong> hi.junaidofficial@gmail.com</p>
-      <p><strong>Location:</strong> Sylhet, Bangladesh</p>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <a href="#" class="footer-logo">
+                <i class="fas fa-code"></i>
+                Junaid<span>.pro</span>
+            </a>
+            <p class="footer-text">Building skills today for responsible innovation tomorrow.</p>
+            <div class="social-links">
+                <a href="https://github.com/thinkasjunaid" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/8801309808792" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://twitter.com/thinkasjunaid" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2023 Junaid Ahmed — junaid.pro.bd. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <footer>
-    © Junaid Ahmed — junaid.pro.bd<br>
-    Building skills today for responsible innovation tomorrow.
-  </footer>
-
-</div>
-
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            }
+        });
+        
+        // Add fade-in animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
